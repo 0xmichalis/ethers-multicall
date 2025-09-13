@@ -1,8 +1,9 @@
-import {InfuraProvider} from '@ethersproject/providers';
+import {JsonRpcProvider} from '@ethersproject/providers';
 import { assert } from 'chai';
 import { Contract, Provider } from '../src';
 
-const provider = new InfuraProvider('mainnet');
+const ethRPCURL = process.env.ETH_RPC_URL || 'https://eth.llamarpc.com';
+const provider = new JsonRpcProvider(ethRPCURL);
 const ethcallProvider = new Provider(provider, 1);
 
 it('human readable abi', async () => {
