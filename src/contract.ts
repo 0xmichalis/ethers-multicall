@@ -2,7 +2,9 @@ import { Fragment, FunctionFragment, JsonFragment } from '@ethersproject/abi';
 
 export class Contract {
   private _address: string;
+
   private _abi: Fragment[];
+
   private _functions: FunctionFragment[];
 
   get address() {
@@ -34,6 +36,7 @@ export class Contract {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [method: string]: any;
 }
 
@@ -42,6 +45,7 @@ function toFragment(abi: JsonFragment[] | string[] | Fragment[]): Fragment[] {
 }
 
 function makeCallFunction(contract: Contract, name: string) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (...params: any[]) => {
     const { address } = contract;
     const { inputs } = contract.functions.find(f => f.name === name);

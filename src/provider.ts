@@ -5,6 +5,7 @@ import { ContractCall } from './types';
 
 export class Provider {
   private _provider: EthersProvider;
+
   private _multicallAddress: string;
 
   constructor(provider: EthersProvider, chainId?: number) {
@@ -24,6 +25,7 @@ export class Provider {
     return getEthBalance(address, this._multicallAddress);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async all<T extends any[] = any[]>(calls: ContractCall[]) {
     if (!this._provider) {
       throw new Error('Provider should be initialized before use.');

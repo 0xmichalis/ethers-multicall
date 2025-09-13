@@ -4,6 +4,7 @@ import { keccak256 } from '@ethersproject/keccak256';
 import { toUtf8Bytes } from '@ethersproject/strings';
 
 export class Abi {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public static encode(name: string, inputs: ParamType[], params: any[]) {
     const functionSignature = getFunctionSignature(name, inputs);
     const functionHash = keccak256(toUtf8Bytes(functionSignature));

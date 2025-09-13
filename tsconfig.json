@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "module": "commonjs",
-    "target": "es5",
-    "lib": ["es2015"],
+    "target": "es2018",
     "declaration": true,
     "outDir": "dist",
     "esModuleInterop": true,
@@ -10,6 +10,9 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*"
+    "src/", "test/"
+  ],
+  "files": [
+    ".eslintrc.js"
   ]
 }

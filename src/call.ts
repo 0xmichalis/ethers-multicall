@@ -5,6 +5,7 @@ import { Abi } from './abi';
 import { multicallAbi } from './abi/multicall';
 import { ContractCall } from './types';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function all<T extends any[] = any[]>(
   calls: ContractCall[],
   multicallAddress: string,

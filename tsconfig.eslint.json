@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "noEmit": true,
+      "noImplicitAny": false,
+      "strict": true,
+      "strictNullChecks": true
+    },
+    "extends": "./tsconfig.json",
+    "files": [".eslintrc.js"]
+}
